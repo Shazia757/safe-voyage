@@ -27,8 +27,8 @@ class CustomNavBar extends StatelessWidget {
       currentIndex: currentIndex,
       items: <BottomNavigationBarItem>[
         navBarItem("Home", icon: Icon(Icons.home)),
-        navBarItem("Safe route", icon: Icon(Icons.safety_check)),
-        navBarItem("Destination Safety", icon: Icon(Icons.place)),
+        navBarItem("Safe route", icon: Icon(Icons.place)),
+        navBarItem("Destination Safety", icon: Icon(Icons.safety_check)),
         navBarItem("Community", icon: Icon(Icons.group)),
       ],
     );

@@ -147,7 +147,7 @@ class _SafetyRatingsScreenState extends State<SafetyRatingsScreen> {
           ),
         ),
         bottomNavigationBar:
-            CustomNavBar(currentIndex: 2), //  Integrated bottom navigation
+            CustomNavBar(currentIndex: 2), 
       ),
     );
   }

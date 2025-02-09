@@ -47,7 +47,6 @@ class _SafeRouteScreenState extends State<SafeRouteScreen> {
   }
 
   Future<void> updateRoute() async {
-    // Get coordinates from the "From" and "To" text fields using geocoding
     List<Location> fromLocations =
         await locationFromAddress(_fromController.text);
     List<Location> toLocations = await locationFromAddress(_toController.text);
@@ -61,7 +60,6 @@ class _SafeRouteScreenState extends State<SafeRouteScreen> {
             LatLng(toLocations.first.latitude, toLocations.first.longitude);
       });
 
-      // Fetch the new route based on updated coordinates
       fetchRoute();
     }
   }
@@ -79,7 +77,6 @@ class _SafeRouteScreenState extends State<SafeRouteScreen> {
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(children: [
-          // From and To TextFields
           TextField(
             controller: _fromController,
             decoration: InputDecoration(
@@ -107,7 +104,7 @@ class _SafeRouteScreenState extends State<SafeRouteScreen> {
                 backgroundColor: WidgetStateColor.resolveWith(
                     (states) => Colors.blue.shade900)),
 
-            onPressed: updateRoute, // Call updateRoute when button is pressed
+            onPressed: updateRoute, 
             child: Text("Get Safe Route"),
           ),
 

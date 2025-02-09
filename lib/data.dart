@@ -59,7 +59,6 @@ class LocalDB {
 }
 
 class SafetyScoreService {
-  // Preloaded safety data using a Map
   final Map<String, Map<String, double>> safetyData = {
     "New York": {"crimeRate": 7.5, "nightSafety": 6.0},
     "Los Angeles": {"crimeRate": 6.2, "nightSafety": 7.2},

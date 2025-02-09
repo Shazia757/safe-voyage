@@ -15,7 +15,6 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: Container(),
-        
       ),
       bottomNavigationBar: CustomNavBar(currentIndex: 0),
       body: Padding(
@@ -46,12 +45,15 @@ class HomeScreen extends StatelessWidget {
             // Safety Score Card
             SizedBox(height: 20),
             Card(
-              elevation: 5,
+              elevation: 2,
               child: ListTile(
                 title: Text('Safety Score',
                     style:
                         TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
-                subtitle: Text('Current safety score for your location:'),
+                subtitle: Text(
+                  'Current safety score for your location:',
+                  style: TextStyle(fontSize: 15),
+                ),
                 trailing: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -100,12 +102,15 @@ class HomeScreen extends StatelessWidget {
             SizedBox(height: 20),
             // Safety Alerts Section
             Card(
-              elevation: 5,
+              elevation: 2,
               child: ListTile(
                 title: Text('Safety Alerts',
                     style:
                         TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
-                subtitle: Text('Get alerts for any nearby incidents.'),
+                subtitle: Text(
+                  'Get alerts for any nearby incidents.',
+                  style: TextStyle(fontSize: 15),
+                ),
               ),
             ),
             SizedBox(height: 40),
@@ -178,10 +183,6 @@ class FeatureButton extends StatelessWidget {
 
 class EmergencyScreen extends StatelessWidget {
   void sendSOS(double lat, double long) async {
-    String emergencyNumber =
-        "1234567890"; // Replace with a real emergency contact number
-    String message =
-        "🚨 Emergency! I need help. My location: https://maps.google.com/?q=$lat,$long";
     final Uri smsUri =
         Uri.parse('sms:+1234567890?body=Emergency! I need help!');
     try {
