@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:safe_voyage/community_page.dart';
+import 'package:safe_voyage/safety_page.dart';
+import 'package:safe_voyage/safe_routes.dart';
 import 'home.dart';
 
 class CustomNavBar extends StatelessWidget {
@@ -6,6 +9,9 @@ class CustomNavBar extends StatelessWidget {
   final int currentIndex;
   final pages = [
     HomeScreen(),
+    SafeRouteScreen(),
+    SafetyRatingsScreen(),
+    CommunityScreen()
   ];
 
   @override
@@ -30,6 +36,8 @@ class CustomNavBar extends StatelessWidget {
 
   BottomNavigationBarItem navBarItem(String label, {required Widget icon}) {
     return BottomNavigationBarItem(
-        icon: icon, label: label, backgroundColor: Colors.blueGrey);
+        icon: icon,
+        label: label,
+        backgroundColor: const Color.fromARGB(255, 3, 56, 116));
   }
 }
