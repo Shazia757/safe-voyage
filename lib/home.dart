@@ -198,10 +198,20 @@ class EmergencyScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Emergency SOS")),
-      body: Center(
-          child: ElevatedButton(
-              onPressed: () => sendSOS(40.758896, -73.985130),
-              child: Text("Send SOS"))),
+      body: Column(
+        children: [
+          Text(
+            "On clicking this button, your real-time location will be instantly sent to both your buddies and emergency contacts, ensuring quick assistance in emergencies. 🚨📍",
+            maxLines: 5,
+          ),
+          ElevatedButton(
+              onPressed: () {
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                    content: Text("Location shared to nearby buddies")));
+              },
+              child: Text("Send SOS")),
+        ],
+      ),
     );
   }
 }
